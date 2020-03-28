@@ -45,6 +45,7 @@ preview of the playlist we plan on deploying - only the user to be able to see t
 /logout
 
 CLEANUP - CLEANUP APPLICATION TO BETTER RESPECT ENV
+can i move view configuration ito env?
 
 ---
 It would be nice to have a nice UI/Theme

@@ -35,12 +35,15 @@ GEM
     minitest (5.14.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pry (0.13.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.3)
+    puma (4.3.3)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
@@ -103,6 +106,7 @@ DEPENDENCIES
   bcrypt
   capybara
   pry
+  puma
   rack-test
   rake
   require_all
