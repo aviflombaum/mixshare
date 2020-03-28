@@ -60,6 +60,10 @@
     width: 60%; /* 480px / 800px */
   }
 
+  div.notice {
+    color: #FF0000;
+  }
+
   .sidebar {
     background: #eee;
     border: 1px solid #ccc;

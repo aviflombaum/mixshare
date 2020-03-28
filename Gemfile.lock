@@ -45,6 +45,8 @@ GEM
     puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.2.2)
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
@@ -107,6 +109,7 @@ DEPENDENCIES
   capybara
   pry
   puma
+  rack-flash3
   rack-test
   rake
   require_all
