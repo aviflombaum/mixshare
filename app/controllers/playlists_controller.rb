@@ -12,6 +12,12 @@ class PlaylistsController < ApplicationController
     erb :"playlists/new.html"
   end
 
+  get '/playlists/:id' do
+    @playlist = current_user.playlists.find(params[:id])
+
+    erb :"playlists/show.html"
+  end
+
   post '/playlists' do 
     @playlist = Playlist.new
     @playlist.name = params[:name]
