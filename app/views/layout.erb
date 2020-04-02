@@ -22,6 +22,7 @@
         <nav>
           <% if logged_in? %>
           Logged in as: <%= current_user.email %> | 
+          <a href="/playlists/new">New Playlist</a> |
           <a href="/logout">Logout</a>
           <% else %>
           <a href="/register">Register</a> |
