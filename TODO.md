@@ -4,6 +4,18 @@ User Functionality
   /login
   /logout
 
+Sprint 2: Basic Playist
+  New
+  Create
+  Index
+  Show
+
+Sprint 3: Adding Songs
+  Create the song model
+  wire up associations
+  add an add song form (new song) to the playlist show
+
+-----
   User
   authentication
   email / password

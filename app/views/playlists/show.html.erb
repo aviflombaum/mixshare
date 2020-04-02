@@ -1,1 +1,12 @@
 <h1><%= @playlist.name %></h1>
+
+<ol>
+  <% @playlist.songs.each do |song| %>
+  <li><%= song.url %></li>
+  <% end %>
+</ol>
+
+<form action="/playlists/<%= @playlist.id %>/songs" method="POST">
+  <input type="text" name="url" />
+  <input type="submit" value="Add Song">
+</form>

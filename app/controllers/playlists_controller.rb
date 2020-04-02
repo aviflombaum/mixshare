@@ -30,5 +30,13 @@ class PlaylistsController < ApplicationController
     end
   end
 
-
+  post '/playlists/:id/songs' do
+    @playlist = current_user.playlists.find(params[:id])
+    @song = @playlist.songs.build(:url => params[:url])
+    if @song.save
+      redirect "/playlists/#{@playlist.id}"
+    else
+      erb :"playlists/show.html"
+    end
+  end
 end
