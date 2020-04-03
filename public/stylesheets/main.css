@@ -117,3 +117,16 @@
     line-height: 24px;
   }
 }
+
+// Our App CSS
+section{
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;  
+}
+audio{
+  display: block;
+}
+

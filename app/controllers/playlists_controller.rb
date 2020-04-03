@@ -30,6 +30,14 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  # SongsController Begins
+  get '/playlists/:playlist_id/songs/:id' do
+    @playlist = current_user.playlists.find(params[:playlist_id])
+    @song = @playlist.songs.find(params[:id])
+
+    erb :"songs/show.html"
+  end
+
   post '/playlists/:id/songs' do
     @playlist = current_user.playlists.find(params[:id])
     @song = @playlist.songs.build(:url => params[:url])

@@ -1,0 +1,13 @@
+
+
+<section>
+  <div>
+    <h1>Playing <%= @song.id %> from <a href="/playlists/<%= @playlist.id %>"><%= @song.playlist.name %></a></h1>
+    <p>
+      <audio controls="true">
+      <source src="<%= @song.url %>" type="audio/mpeg">
+    </audio>
+    </p>
+    <h2><a href="<%= @song.url %>">Download</a></h2>
+  </div>
+</section>

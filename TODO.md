@@ -15,6 +15,14 @@ Sprint 3: Adding Songs
   wire up associations
   add an add song form (new song) to the playlist show
 
+Sprint 4: Playing Songs
+  Create Show Page linked to from PLaylist Show for a Song with a Web Player
+  
+Sprint:
+  Preview Song on playlist page
+  Song Name and URL???
+  Deploy the Playlist to Surge
+
 -----
   User
   authentication
@@ -58,6 +66,9 @@ preview of the playlist we plan on deploying - only the user to be able to see t
 
 CLEANUP - CLEANUP APPLICATION TO BETTER RESPECT ENV
 can i move view configuration ito env?
+Refactor into SongsController song functionality.
+
+SONGS NEED A NAME? WHERE TO GET THAT FROM...
 
 ---
 It would be nice to have a nice UI/Theme

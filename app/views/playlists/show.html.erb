@@ -2,7 +2,7 @@
 
 <ol>
   <% @playlist.songs.each do |song| %>
-  <li><%= song.url %></li>
+  <li><a href="<%= "/playlists/#{@playlist.id}/songs/#{song.id}" %>"><%= song.url %></a></li>
   <% end %>
 </ol>
 
