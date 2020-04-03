@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:sinatra-activerecord/sinatra-activerecord.git
+  revision: f967137e16a0c52bcc73a6b155d61dbfd50c575d
+  specs:
+    sinatra-activerecord (2.0.13)
+      activerecord (>= 3.2)
+      sinatra (>= 1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -35,6 +43,7 @@ GEM
     minitest (5.14.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
@@ -42,6 +51,8 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.3)
+    puma (4.3.3)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-flash3 (1.0.5)
       rack
@@ -81,6 +92,7 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
+    sqlite3 (1.4.2)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tux (0.3.0)
@@ -103,6 +115,7 @@ DEPENDENCIES
   capybara
   pg
   pry
+  puma
   rack-flash3
   rack-test
   rake
@@ -110,6 +123,8 @@ DEPENDENCIES
   rspec
   shotgun
   sinatra
+  sinatra-activerecord!
+  sqlite3
   tux
 
 BUNDLED WITH
