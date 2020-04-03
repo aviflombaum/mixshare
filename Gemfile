@@ -1,9 +1,10 @@
+# ruby '2.6.6'
 source 'http://rubygems.org'
 
 gem 'sinatra'
 gem 'rack-flash3'
 gem 'activerecord'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord', :git => "git@github.com:sinatra-activerecord/sinatra-activerecord.git"
+gem 'sinatra-activerecord', :git => "https://github.com/sinatra-activerecord/sinatra-activerecord.git"
 gem 'rake'
 gem 'require_all'
 gem 'bcrypt'
