@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/heroku/netrc.git
+  revision: 262ef111199058f89df4573c4f04aae65e5e5041
+  specs:
+    netrc (0.11.0)
+
+GIT
   remote: https://github.com/sinatra-activerecord/sinatra-activerecord.git
   revision: f967137e16a0c52bcc73a6b155d61dbfd50c575d
   specs:
@@ -113,6 +119,7 @@ DEPENDENCIES
   activerecord
   bcrypt
   capybara
+  netrc!
   pg
   pry
   puma
@@ -126,6 +133,9 @@ DEPENDENCIES
   sinatra-activerecord!
   sqlite3
   tux
+
+RUBY VERSION
+   ruby 2.6.6p146
 
 BUNDLED WITH
    2.1.4

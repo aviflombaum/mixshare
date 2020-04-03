@@ -1,4 +1,4 @@
-# ruby '2.6.6'
+ruby '2.6.6'
 source 'http://rubygems.org'
 
 gem 'sinatra'
@@ -12,6 +12,7 @@ gem 'puma'
 
 group :production do
   gem 'pg'
+  gem 'netrc', :git => "https://github.com/heroku/netrc.git"
 end
 
 group :development, :test do
