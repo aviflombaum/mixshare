@@ -10,3 +10,8 @@
   <input type="text" name="url" />
   <input type="submit" value="Add Song">
 </form>
+
+<form action="/playlists/<%= @playlist.id %>/publish" method="POST">
+  <input type="submit" value="Deploy Playlist">
+</form>
+

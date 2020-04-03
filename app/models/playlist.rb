@@ -13,6 +13,22 @@ class Playlist < ActiveRecord::Base
     end
   end
 
+  def site_html
+    template_html = File.read("./lib/templates/playlist_template.html.erb")
+    playlist = self
+    template = ERB.new(template_html)
+    template.result(binding)
+  end
+
+  def mk_tmp_dir
+    if !Dir.exists?("./tmp/#{dir_name}")
+      Dir.mkdir("./tmp/#{dir_name}")
+    end
+  end
+
+  def build_site
+    File.open("./tmp/#{dir_name}/index.html", "w"){|f| f.write(site_html)}   
+  end
   def rmx_url
     "#{dir_name.downcase.gsub(" ", "-")}.rmx.wtf"
   end
@@ -21,14 +37,23 @@ class Playlist < ActiveRecord::Base
     "./tmp/#{dir_name}"
   end
 
-    
-
   def publish!
+    ENV["PLAYLIST_ID"] = self.id.to_s
+    status = system("rake playlist:build PLAYLIST_ID=#{self.id}")
+    if status
+      return true
+    else
+      return false
+    end
+  end
+
+  def surge_deploy!
     status = system("surge --project '#{tmp_dir}' --domain '#{rmx_url}'")
     if status
-      puts "Project Deployed to #{rmx_url}"
+      return true
     else
       abort 'the operation failed'
+      return false
     end
   end
 end

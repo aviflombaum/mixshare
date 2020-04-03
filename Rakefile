@@ -11,22 +11,24 @@ require 'sinatra/activerecord/rake'
 #end
 
 namespace :playlist do
+  desc "Deploys Playlist to Surge via PLAYLIST_ID"
   task :build do
     if playlist = Playlist.find(ENV["PLAYLIST_ID"])
-      template_html = File.read("./lib/templates/playlist_template.html.erb")
+      playlist.mk_tmp_dir
+      playlist.build_site
 
-      template = ERB.new(template_html)
-      playlist_html = template.result(binding)
+      # template_html = File.read("./lib/templates/playlist_template.html.erb")
 
-      if !Dir.exists?("./tmp/#{playlist.dir_name}")
-        Dir.mkdir("./tmp/#{playlist.dir_name}")
-      end
+      # template = ERB.new(template_html)
+      # playlist_html = template.result(binding)
 
-      File.new("./tmp/#{playlist.dir_name}/index.html", "w+")
+      # if !Dir.exists?("./tmp/#{playlist.dir_name}")
+      #   Dir.mkdir("./tmp/#{playlist.dir_name}")
+      # end
 
-      File.open("./tmp/#{playlist.dir_name}/index.html", "w"){|f| f.write(playlist_html)}   
+      # File.open("./tmp/#{playlist.dir_name}/index.html", "w"){|f| f.write(playlist_html)}   
 
-      playlist.publish!
+      playlist.surge_deploy!
 
       # exec("surge --project './tmp/#{playlist.dir_name}' --domain '#{playlist.dir_name.downcase.gsub(" ", "-")}.rmx.wtf'")
 

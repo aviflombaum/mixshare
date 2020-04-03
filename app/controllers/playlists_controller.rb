@@ -47,4 +47,13 @@ class PlaylistsController < ApplicationController
       erb :"playlists/show.html"
     end
   end
+
+  post '/playlists/:id/publish' do
+    @playlist = current_user.playlists.find(params[:id])
+    if @playlist.publish!
+      "Deployed to #{@playlist.rmx_url}"
+    else
+      "Failure"
+    end
+  end
 end
