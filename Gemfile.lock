@@ -92,7 +92,6 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
-    sqlite3 (1.4.2)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tux (0.3.0)
@@ -124,7 +123,6 @@ DEPENDENCIES
   shotgun
   sinatra
   sinatra-activerecord!
-  sqlite3
   tux
 
 BUNDLED WITH
