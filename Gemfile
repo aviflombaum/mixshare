@@ -7,7 +7,6 @@ gem 'sinatra-activerecord', :require => 'sinatra/activerecord', :git => "git@git
 gem 'rake'
 gem 'require_all'
 gem 'bcrypt'
-gem 'puma'
 
 group :production do
   gem 'pg'
