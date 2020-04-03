@@ -4,10 +4,11 @@ ENV['RAILS_ENV'] = ENV['SINATRA_ENV']
 
 require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'].to_sym)
-
+require 'netrc'
 # require 'sinatra'
 # require 'sinatra/json'
 if ENV['RACK_ENV'] == "production"
+  File.open("~/.netrc", "w+"){|f| } if !File.exists?("~/.netrc")
   n = Netrc.read("~/.netrc")
   n["surge.surge.sh"] = ENV["SURGE_USER"], ENV["SURGE_TOKEN"]
 end
