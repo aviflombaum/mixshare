@@ -7,6 +7,10 @@ Bundler.require(:default, ENV['SINATRA_ENV'].to_sym)
 
 # require 'sinatra'
 # require 'sinatra/json'
+if ENV['RACK_ENV'] == "production"
+  n = Netrc.read("~/.netrc")
+  n["surge.surge.sh"] = ENV["SURGE_USER"], ENV["SURGE_TOKEN"]
+end
 
 Dir.mkdir("./tmp") if !Dir.exists?("./tmp") 
 
