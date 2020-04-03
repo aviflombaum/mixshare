@@ -1,9 +1,9 @@
 ENV['RACK_ENV'] ||= "development"
-ENV['SINATRA_ENV'] ||= "development"
+ENV['SINATRA_ENV'] ||= ENV['RACK_ENV']
 ENV['RAILS_ENV'] = ENV['SINATRA_ENV']
 
 require 'bundler/setup'
-Bundler.require(:default, ENV['SINATRA_ENV'])
+Bundler.require(:default, ENV['SINATRA_ENV'].to_sym)
 
 require 'sinatra/json'
 Dir.mkdir("./tmp") if !Dir.exists("./tmp") 
